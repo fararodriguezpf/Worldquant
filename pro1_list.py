@@ -132,3 +132,19 @@ add a key-value pair to a dictionary in python
 zip two lists together in python
 write a for loop in python
 """
+
+price = houses_columnwise["price_approx_usd"]
+area = houses_columnwise["surface_covered_in_m2"]
+price_per_m2 = []
+
+for p,a in zip(price,area):
+    price_m2 = p/a
+    price_per_m2.append("price m_2")
+
+# add "price_per_m2" key-value pair for 'houses_columnwise'
+
+import pandas as pd
+
+# Declare variable 'df_houses'
+df_houses = pd.DataFrame(houses_columnwise
+houses_columnwise["price_per_m2"]
