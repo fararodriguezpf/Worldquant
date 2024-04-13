@@ -12,12 +12,12 @@ perform basic mathematical operations in python
 """
 
 # declare a variable 'house_0_price_m2'
-house_0_price_m2 = house_0_price_m2 / house_0_list[1]
+house_0_price_m2 = house_0_list[house_0_list] / house_0_list[1]
 
 # append price/sq. meter to 'house_0_list
 house_0_list.append(house_0_price_m2)
 
-#now that you can work with data for a single house, let's think about how to organize the whole dataset. one option would be to create a list for each observation and then put those together in another list. this is called nested list
+# now that you can work with data for a single house, let's think about how to organize the whole dataset. one option would be to create a list for each observation and then put those together in another list. this is called nested list
 
 # declare a variable 'houses_nested_list'
 houses_nested_list = [
@@ -34,23 +34,27 @@ houses_nested_list = [
 at the end, you will be able to answer the following questions:
 what is a for loop?
 write a for loop in python
+
 """
 
 # create for loop to iterate through "houses_nested_list"
 for house in houses_nested_list:
-  # for each observation, append price / sq. meter
+  # for each observation, append price/sq. meter
   price_m2 = house[0] / house[1]
   house.append(price_m2)
 
 # WORKING WITH DICTIONARIES
+
 """
 lists are a good way to organize data, but one drawback is that we can only represent values. why is that a problem
 for example someone looking at [115910.26, 128.0, 4] wouldn't know which values correspond to price, area etc. a 
 better option might be a dictionary, where each value is associated with a key. here's what house_0 looks
 like as a dictionary instead of a list
+
 """
 
 # declare variable 'house_0_dict'
+
 house_0_dict = {
     "price_approx_usd": 115910.26,
     "surface_covered_in_m2": 128,
@@ -58,19 +62,23 @@ house_0_dict = {
 }
 
 # Print `house_0_dict` type
+
 print("house_0_dict type:", type(house_0_dict))
 
 # Get output of `house_0_dict`
-house_0_dict
+
+print(house_0_dict)
 
 """
 at the end, you will be able to answer the following:
 what is a dictionary?
 access an item in a dictionary in python
+
 """
 
 # add 'price_per_m2" key-value pair to 'house_0_dict'
-house_0_dict['price_per_m2'] = house_0_dict["price_approx_usd'] / house_0_dict["surface_covered_in_m2"]
+
+house_0_dict['price_per_m2'] = house_0_dict["price_approx_usd"] / house_0_dict["surface_covered_in_m2"]
 
 # if we wanted to combine all our observations together, the best way would be to create a list of dictionaries
 
@@ -105,9 +113,11 @@ houses_rowwise = [
 """
 task : using a for loop, calculate the price per square meter and store the result under a 'price_per+m2" key for each observation in houses_rowwise
 what is json
+
 """
 
 # create for loop to iterate through 'houses_rowwise'
+
 for house in houses_rowwise:
   # for each observation, add 'price_per_m2' key-value pair
   house["price_per_m2"] = house["price_approx_usd"] / house["surface_covered_in_m2"]
@@ -131,7 +141,13 @@ task :
 add a key-value pair to a dictionary in python
 zip two lists together in python
 write a for loop in python
+
 """
+houses_columnwise = {
+    "price_approx_usd": [114910.23, 423912.12, 23839.23,325912.32,83235.12],
+    "surface_covered_in_m2":[128.0,239.2,83.2, 934.2,122.1],
+    "rooms": [4.0,3.0,2.0,3.0,3.0]
+}
 
 price = houses_columnwise["price_approx_usd"]
 area = houses_columnwise["surface_covered_in_m2"]
@@ -146,5 +162,5 @@ for p,a in zip(price,area):
 import pandas as pd
 
 # Declare variable 'df_houses'
-df_houses = pd.DataFrame(houses_columnwise
+df_houses = pd.DataFrame(houses_columnwise)
 houses_columnwise["price_per_m2"]
