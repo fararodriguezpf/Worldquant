@@ -12,7 +12,7 @@ perform basic mathematical operations in python
 """
 
 # declare a variable 'house_0_price_m2'
-house_0_price_m2 = house_0_list[house_0_list] / house_0_list[1]
+house_0_price_m2 = house_0_list[0] / house_0_list[1]
 
 # append price/sq. meter to 'house_0_list
 house_0_list.append(house_0_price_m2)
@@ -155,12 +155,13 @@ price_per_m2 = []
 
 for p,a in zip(price,area):
     price_m2 = p/a
-    price_per_m2.append("price m_2")
+    price_per_m2.append("price_m2")
 
 # add "price_per_m2" key-value pair for 'houses_columnwise'
+print(houses_columnwise)
 
 import pandas as pd
 
 # Declare variable 'df_houses'
 df_houses = pd.DataFrame(houses_columnwise)
-houses_columnwise["price_per_m2"]
+
